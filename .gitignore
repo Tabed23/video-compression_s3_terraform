@@ -1,0 +1,7 @@
+.venv
+.terraform
+.terraform.lock.hcl
+.idea
+lambda.zip
+python.zip
+python
