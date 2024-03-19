@@ -6,8 +6,8 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "wotson-statebucket-tf"
-    key    = "wotson-statebucket-tf/terraform.tfstate"
+    bucket = "your-bucket"
+    key    = "your-bucket/terraform.tfstate"
     region = "us-east-1"
   }
 }
