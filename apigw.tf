@@ -38,21 +38,7 @@ resource "aws_api_gateway_deployment" "deployment" {
   stage_name  = "dev"
 
 }
-resource "aws_iam_role_policy_attachment" "lambda_basic" {
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-  role = aws_iam_role.lambda_role.name
-}
-resource "aws_iam_role_policy_attachment" "dynamodb_put_item" {
-  role       = aws_iam_role.lambda_role.name
-  policy_arn = aws_iam_policy.dynamodb_put_item.arn
-}
-resource "aws_lambda_permission" "apigw_lambda" {
-  statement_id = "AllowExecutionFromAPIGateway"
-  action = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.function.function_name
-  principal     = "apigateway.amazonaws.com"
-  source_arn = "${aws_api_gateway_rest_api.apigw.execution_arn}/*"
-}
+
 
 resource "aws_api_gateway_method_response" "proxy" {
   rest_api_id = aws_api_gateway_rest_api.apigw.id

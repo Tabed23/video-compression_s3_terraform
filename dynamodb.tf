@@ -1,5 +1,5 @@
 resource "aws_dynamodb_table" "video_processing_table" {
-  name           = "video_processing_tracker"
+  name           =  var.db_table_name
   billing_mode   = "PROVISIONED"
   read_capacity  = 1
   write_capacity = 1

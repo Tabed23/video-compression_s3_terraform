@@ -9,7 +9,7 @@ logger = logging.getLogger()
 logger.setLevel("INFO")
 s3 = boto3.client('s3', region_name='us-east-1')
 dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
-dynamodb_table_name = 'video_processing_tracker'
+dynamodb_table_name = 'processing_tracker'
 
 
 def lambda_handler(event, context):

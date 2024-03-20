@@ -1,7 +1,7 @@
 
-db_table_name = "dev-table"
+db_table_name = "processing_tracker"
 
-lambda_name = "vide-compression-function"
+lambda_name = "video-process-function"
 api_gw_name = "video-apigw"
 
 
